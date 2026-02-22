@@ -16,6 +16,7 @@ public class ClienteListResponse {
     private String email;
     private String celular;
 
+
     private ClienteListResponse(Cliente cliente) {
         this.celular = cliente.getCelular();
         this.email = cliente.getEmail();
@@ -29,4 +30,7 @@ public class ClienteListResponse {
                 .map(ClienteListResponse::new)
                 .collect(Collectors.toList());
     }
+
+
+
 }
