@@ -44,23 +44,6 @@ public class Cliente {
     private LocalDateTime dataHotaDoCadastro;
     private LocalDateTime dataHotaDaUltimaAlteracao;
 
-    public Cliente(String nomeCompleto, String email, String celular, String telefone, Sexo sexo,
-                   LocalDate dataNascimento, String cpf, Boolean aceitaTermos) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.aceitaTermos = aceitaTermos;
-        this.dataHotaDoCadastro = LocalDateTime.now();
-    }
-
-
-
-
-
     public Cliente(ClienteRequest clienteRequest) {
         this.nomeCompleto = clienteRequest.getNomeCompleto();
         this.email = clienteRequest.getEmail();
