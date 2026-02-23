@@ -23,4 +23,8 @@ public interface ClienteAPI {
     @ResponseStatus(code = HttpStatus.OK)
     ClienteDetalhadoResponse buscaClientePorId(@PathVariable UUID idCliente);
 
+    @DeleteMapping(value = "/{idCliente}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaCliente(@PathVariable UUID idCliente);
+
 }
