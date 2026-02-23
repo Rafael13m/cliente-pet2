@@ -1,0 +1,30 @@
+package br.com.petz.clientepet.cliente.application.api;
+
+import br.com.petz.clientepet.cliente.domain.Sexo;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.br.CPF;
+
+import java.time.LocalDate;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClienteAlteracaoRequest {
+
+    @NotBlank
+    private String nomeCompleto;
+    @NotBlank
+    String celular;
+    private String telefone;
+    private Sexo sexo;
+    @NotNull
+    private LocalDate dataNascimento;
+    @NotNull
+    private  Boolean aceitaTermos;
+
+}
