@@ -9,7 +9,7 @@ import java.util.UUID;
 @Log4j2
 public class PetController implements PetAPI {
     @Override
-    public PetResponse postPet(UUID idCliente) {
+    public PetResponse postPet(UUID idCliente, PetRequest petRequest) {
         log.info("[inicia] PetController - postPet");
         log.info("[idCliente] {}", idCliente);
         log.info("[finaliza] PetController - postPet");

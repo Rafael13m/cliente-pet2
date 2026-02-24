@@ -38,7 +38,7 @@ public class Cliente {
     private Sexo sexo;
     @NotNull
     private LocalDate dataNascimento;
-    @CPF
+   // @CPF
     @Column(unique = true)
     private String cpf;
 
