@@ -1,6 +1,5 @@
 package br.com.petz.clientepet.pet.application.api;
 
-import br.com.petz.clientepet.cliente.application.api.*;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +13,12 @@ public interface PetAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    PetResponse postPet(@PathVariable UUID idCliente,
+    PetResponse criaPet(@PathVariable UUID idCliente,
                         @Valid @RequestBody PetRequest petRequest);
 
-//    @GetMapping
-//    @ResponseStatus(code = HttpStatus.OK)
-//    List<ClienteListResponse> buscaClientes();
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<PetClienteListResponse> buscaPetsDoCliente(@PathVariable UUID idCliente);
 //
 //    @GetMapping(value = "/{idCliente}")
 //    @ResponseStatus(code = HttpStatus.OK)

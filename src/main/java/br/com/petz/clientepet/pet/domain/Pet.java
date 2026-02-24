@@ -23,6 +23,9 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idPet;
+    @NotNull
+    @Column(name = "idClienteTutor", nullable = false)
+    private UUID idCLienteTutor;
     @NotBlank
     private String nomePet;
     @Enumerated(EnumType.STRING)
@@ -36,14 +39,14 @@ public class Pet {
     private String pelagemCor;
     @NotNull
     private LocalDate dataNascimento;
-    @Column(unique = true)
     private String rga;
     private Integer peso;
 
     private LocalDateTime dataHotaDoCadastro;
     private LocalDateTime dataHotaDaUltimaAlteracao;
 
-    public Pet(PetRequest petRequest) {
+    public Pet(UUID idCliente, PetRequest petRequest) {
+        this.idCLienteTutor = idCliente;
         this.nomePet = petRequest.getNomePet();
         this.porte = petRequest.getPorte();
         this.tipo = petRequest.getTipo();
