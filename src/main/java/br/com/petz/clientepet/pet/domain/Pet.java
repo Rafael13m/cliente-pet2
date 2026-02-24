@@ -42,5 +42,5 @@ public class Pet {
 
     private LocalDateTime dataHotaDoCadastro;
     private LocalDateTime dataHotaDaUltimaAlteracao;
-    
+
 }
