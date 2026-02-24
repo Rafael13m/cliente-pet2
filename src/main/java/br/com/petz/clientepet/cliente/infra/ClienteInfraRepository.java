@@ -1,5 +1,6 @@
 package br.com.petz.clientepet.cliente.infra;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteAlteracaoRequest;
 import br.com.petz.clientepet.cliente.application.api.ClienteListResponse;
 import br.com.petz.clientepet.cliente.application.repository.ClienteRepository;
 import br.com.petz.clientepet.cliente.domain.Cliente;
@@ -45,9 +46,8 @@ public class ClienteInfraRepository implements ClienteRepository {
     }
 
     @Override
-    public void deletaCliente(UUID idCliente) {
+    public void deletaCliente(Cliente cliente) {
         log.info("Inicia Cliente Infra - Deleta CLiente");
-        Cliente cliente = buscaClientePorId(idCliente);
         clienteSpringDataJPARepository.delete(cliente);
         log.info("Finaliza Cliente Infra - Deleta CLiente");
     }
